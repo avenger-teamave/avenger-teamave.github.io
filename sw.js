@@ -24,10 +24,11 @@ self.addEventListener('fetch', function(event) {
 			caches.open('v1').then(function(cache) {
 				cache.put(event.request, response.clone());
 			});
+			return response;
 		}
-		return response;
+		return caches.match('/img/1.jpg');
 	}).catch(function(err) {
-		console.log("err",err);
+		console.log("err", err);
 		return caches.match('/img/1.jpg');
 	}));
 });
