@@ -1,0 +1,8 @@
+{
+  "name": "Push Payload - TEST",
+  "short_name": "gpages",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "gcm_sender_id": "157503286999",
+  "gcm_user_visible_only": true
+}
