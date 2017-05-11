@@ -21,7 +21,7 @@ self.addEventListener('fetch', function(event) {
 	}).catch(function() {
 		return fetch(event.request);
 	}).then(function(response) {
-		if(response)
+		if(response.ok)
 		{
 			caches.open('v1').then(function(cache) {
 				cache.put(event.request, response);
