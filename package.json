@@ -1,0 +1,22 @@
+{
+  "name": "gpages",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avenger-teamave/avenger-teamave.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/avenger-teamave/avenger-teamave.github.io/issues"
+  },
+  "homepage": "https://github.com/avenger-teamave/avenger-teamave.github.io#readme",
+  "dependencies": {
+    "web-push": "^3.2.2"
+  }
+}
