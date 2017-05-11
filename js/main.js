@@ -34,6 +34,8 @@ navigator.serviceWorker.register('sw.js')
 	console.log(key);
 	console.log(authSecret);
 
+}).catch(err=>{
+	console.log(err);
 });
 
 
