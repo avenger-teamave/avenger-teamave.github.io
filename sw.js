@@ -24,9 +24,9 @@ self.addEventListener('fetch', function(event) {
 		if(response)
 		{
 			caches.open('v1').then(function(cache) {
-				cache.put(event.request, response.clone());
+				cache.put(event.request, response);
 			});
-			return response;
+			return response.clone();
 		}
 		return caches.match('/img/1.jpg');
 	}).catch(function(err) {
