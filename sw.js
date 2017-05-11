@@ -22,11 +22,10 @@ self.addEventListener('fetch', function(event) {
 		if(response)
 		{
 			caches.open('v1').then(function(cache) {
-				cache.put(event.request, response);
+				cache.put(event.request, response.clone());
 			});
 		}
-		return response.clone();
-
+		return response;
 	}).catch(function(err) {
 		console.log("err",err);
 		return caches.match('/img/1.jpg');
