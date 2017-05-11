@@ -8,8 +8,14 @@ if(!('serviceWorker' in navigator))
 }
 else
 {
-	navigator.serviceWorker.register('/js/sw.js',{scope:"/"}).then(registration => {
-		console.log('SW registered!');
+	navigator.serviceWorker.register('/js/sw.js',{scope:"/img"}).then(registration => {
+		if(registration.installing) {
+			console.log('Service worker installing');
+		} else if(registration.waiting) {
+			console.log('Service worker installed');
+		} else if(registration.active) {
+			console.log('Service worker active');
+		}
 		console.log(registration);
 	}).catch(err => {
 		console.log(err);
