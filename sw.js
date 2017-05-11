@@ -27,7 +27,8 @@ self.addEventListener('fetch', function(event) {
 		}
 		return response.clone();
 
-	}).catch(function() {
+	}).catch(function(err) {
+		console.log("err",err);
 		return caches.match('/img/1.jpg');
 	}));
 });
