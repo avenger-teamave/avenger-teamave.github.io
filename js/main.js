@@ -6,7 +6,7 @@ var endpoint;
 var key;
 var authSecret;
 
-navigator.serviceWorker.register('service-worker.js')
+navigator.serviceWorker.register('sw.js')
 	.then(function(registration) {
 		return registration.pushManager.getSubscription()
 			.then(function(subscription) {
