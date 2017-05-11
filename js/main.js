@@ -8,7 +8,7 @@ if(!('serviceWorker' in navigator))
 }
 else
 {
-	navigator.serviceWorker.register('/js/sw.js').then(registration => {
+	navigator.serviceWorker.register('/js/sw.js',{scope:"/"}).then(registration => {
 		console.log('SW registered!');
 		console.log(registration);
 	}).catch(err => {
