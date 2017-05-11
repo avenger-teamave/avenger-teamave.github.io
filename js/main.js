@@ -9,22 +9,18 @@ var authSecret;
 navigator.serviceWorker.register('sw.js')
 	.then(function(registration) {
 		console.log('reg1');
+		return navigator.serviceWorker.ready.then(reg=>{
+			return registration.pushManager.getSubscription()
+				.then(function(subscription) {
+					console.log('sub',subscription);
+					if(subscription)
+					{
+						return subscription;
+					}
 
-		navigator.serviceWorker.ready.then(reg=>{
-			console.log('ready');
+					return registration.pushManager.subscribe({userVisibleOnly: true});
+				});
 		});
-
-
-		return registration.pushManager.getSubscription()
-			.then(function(subscription) {
-				console.log('sub',subscription);
-				if(subscription)
-				{
-					return subscription;
-				}
-
-				return registration.pushManager.subscribe({userVisibleOnly: true});
-			});
 	}).then(function(subscription) {
 
 	var rawKey        = subscription.getKey ? subscription.getKey('p256dh') : '';
