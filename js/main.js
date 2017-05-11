@@ -9,6 +9,12 @@ var authSecret;
 navigator.serviceWorker.register('sw.js')
 	.then(function(registration) {
 		console.log('reg1');
+
+		navigator.serviceWorker.ready.then(reg=>{
+			console.log('ready');
+		});
+
+
 		return registration.pushManager.getSubscription()
 			.then(function(subscription) {
 				console.log('sub',subscription);
